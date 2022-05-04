@@ -32,40 +32,41 @@ export class SurveyDetailsComponent implements OnInit {
   //   {"name":'Amol',"country":'India'},
   //   {"name":'Akash',"country":'India'},
   // ]
-   surveys: Survey[] = [
-  {
+  //  surveys: Survey[] = [
+  // {
 
-      "firstName":"Rushikesh chu",
+  //     "firstName":"Rushikesh chu",
       
-      "lastName":"Borse",
+  //     "lastName":"Borse",
       
-      "address":"New York",
+  //     "address":"New York",
       
-      "city":"New York",
+  //     "city":"New York",
       
-      "state":"Maharashtra",
+  //     "state":"Maharashtra",
       
-      "zip":"22034",
+  //     "zip":"22034",
       
-      "telephone":"9011544020",
+  //     "telephone":"9011544020",
       
-      "email":"rborse60@gmail.com",
+  //     "email":"rborse60@gmail.com",
       
-      "dateOfSurvey":"2022-01-01",
+  //     "dateOfSurvey":"2022-01-01",
       
-      "mostLiked":["students","location"],
+  //     "mostLiked":["students","location"],
       
-      "intrestInUni":"friends",
+  //     "intrestInUni":"friends",
       
-      "recommendUni":"Very Likely"
-    }]
+  //     "recommendUni":"Very Likely"
+  //   }]
+  public surveys : Survey[]=[];
 
   constructor(private http:HttpClient) { 
     
   }
 
   ngOnInit(): void {
-    this.http.get("http://jsonplaceholder.typicode.com/users").
-      subscribe((data) => console.log(data))
+    this.http.get<Survey[]>("http://localhost:8082/api/studentSurvey").
+      subscribe((data) => this.surveys=data)
   }
 }

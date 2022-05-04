@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 
 
@@ -9,22 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
+
   }
 
   onClickSubmit(result: any) {
 
     
-    console.log("First name is  : " + result.firstName);
-    console.log("last name is  : " + result.lastName);
-    console.log("Street is  : " + result.streetAddress);
-    console.log("City is  : " + result.city);
-    console.log("State is  : " + result.state);
-    console.log("zip is  : " + result.zip);  
-    console.log("Mobile is  : " + result.mobile);
-    console.log("Date is  : " + result.date);
+    // console.log("First name is  : " + result.firstName);
+    // console.log("last name is  : " + result.lastName);
+    // console.log("Street is  : " + result.streetAddress);
+    // console.log("City is  : " + result.city);
+    // console.log("State is  : " + result.state);
+    // console.log("zip is  : " + result.zip);  
+    // console.log("Mobile is  : " + result.mobile);
+    // console.log("Date is  : " + result.date);
 
     let likeMost: string[] = [];
     if(result.students) {
@@ -46,12 +48,19 @@ export class SurveyFormComponent implements OnInit {
       likeMost.push("Sports");
     }
     console.log("Like most is ",likeMost);
-    console.log("Interest is ",result.interest);
-    console.log("Recommendation is ",result.recommendation);
+    // console.log("Interest is ",result.interest);
+    // console.log("Recommendation is ",result.recommendation);
 
-    console.log("Raffle is ",result.raffle);
-    console.log("comments is ",result.comments);
+    // console.log("Raffle is ",result.raffle);
+    // console.log("comments is ",result.comments);
 
+    result.mostLiked=likeMost;
+    console.log(result)
+
+    this.http.post('http://localhost:8082/api/studentSurvey',result).subscribe({
+      next: (response) => console.log(response),
+      error: (error) => console.log(error),
+    });;
  }
 
 }

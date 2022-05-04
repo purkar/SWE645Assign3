@@ -76,8 +76,8 @@
 	      </div>
 	      <div class="row">
 	        <div class="input-field col s6">
-	          <input id="street-address" type="text" name="streetAddress" class="validate" ngModel>
-	          <label for="street-address">Street Address</label>
+	          <input id="address" type="text" name="address" class="validate" ngModel>
+	          <label for="address">Street Address</label>
 	          <span class="helper-text" data-error="wrong" data-success="right">*required</span>
 	        </div>
 	        <div class="input-field col s6">
@@ -100,8 +100,8 @@
 	      </div>
 	      <div class="row">
 	        <div class="input-field col s12">
-	          <input id="mobile" type="tel" name="mobile" class="validate" ngModel>
-	          <label for="mobile">Mobile</label>
+	          <input id="telephone" type="tel" name="telephone" class="validate" ngModel>
+	          <label for="telephone">Mobile</label>
 	          <span class="helper-text" data-error="wrong" data-success="right">*required</span>
 	        </div>
 	      </div>
@@ -115,7 +115,7 @@
 	       <div class = "row">
 		       	<div class="calendar-form">
 		               <label>Date of survey</label>             
-		               <input type = "date" class = "datepicker" name="date" ngModel/>                    
+		               <input type = "date" class = "datepicker" name="dateOfSurvey" ngModel/>                    
 	      		</div>
       		</div>
 	      <div>
@@ -163,25 +163,25 @@
 			<fieldset>
 	      	<p>
 		      <label>
-		        <input class="with-gap" type="radio" name="interest" value="friends" ngModel/>
+		        <input class="with-gap" type="radio" name="intrestInUni" value="friends" ngModel/>
 		        <span>Friends</span>
 		      </label>
 		    </p>
 		    <p>
 		      <label>
-		        <input class="with-gap" type="radio" name="interest" value="television" ngModel/>
+		        <input class="with-gap" type="radio" name="intrestInUni" value="television" ngModel/>
 		        <span>Television</span>
 		      </label>
 		    </p>
     		<p>
 		      <label>
-		        <input class="with-gap" type="radio" name="interest" value="internet" ngModel/>
+		        <input class="with-gap" type="radio" name="intrestInUni" value="internet" ngModel/>
 		        <span>Internet</span>
 		      </label>
 		    </p>
 		    <p>
 		      <label>
-		        <input class="with-gap" type="radio" name="interest" value="other" ngModel/>
+		        <input class="with-gap" type="radio" name="intrestInUni" value="other" ngModel/>
 		        <span>Other</span>
 		      </label>
 		    </p>
@@ -192,7 +192,7 @@
 	      	 How much you can recommend school to other students ?
 	      	 <br>
 	      	  <label>Browser Select</label>
-			  <select class="browser-default" name="recommendation" ngModel>
+			  <select class="browser-default" name="recommendUni" ngModel>
 			    <option value="" disabled selected>Choose your option</option>
 			    <option value="3">Very likely</option>
 			    <option value="2">Likely</option>
