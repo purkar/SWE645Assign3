@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +10,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class SurveyFormComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -57,8 +57,15 @@ export class SurveyFormComponent implements OnInit {
     result.mostLiked=likeMost;
     console.log(result)
 
+    // alert('Successfully inserted...')
+    // this.router.navigateByUrl('/survey-details');
+
     this.http.post('http://localhost:8082/api/studentSurvey',result).subscribe({
-      next: (response) => console.log(response),
+      next: (response) => {
+        console.log(response);
+        alert('Your response for survey is added...')
+        this.router.navigateByUrl('/schema-details');
+      },
       error: (error) => console.log(error),
     });;
  }

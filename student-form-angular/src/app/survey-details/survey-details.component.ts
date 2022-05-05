@@ -28,10 +28,7 @@ export class SurveyDetailsComponent implements OnInit {
   firstName= 'Sachin';
   lastName='Tendulkar';
 
-  // names = [
-  //   {"name":'Amol',"country":'India'},
-  //   {"name":'Akash',"country":'India'},
-  // ]
+  
   //  surveys: Survey[] = [
   // {
 
